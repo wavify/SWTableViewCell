@@ -304,12 +304,16 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
 
 - (void)setSelected:(BOOL)selected
 {
-    [self setHighlighted:selected];
+    [super setSelected:selected];
+    self.scrollViewButtonViewLeft.hidden = selected;
+    self.scrollViewButtonViewRight.hidden = selected;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    [self setHighlighted:selected];
+    [super setSelected:selected animated:animated];
+    self.scrollViewButtonViewLeft.hidden = selected;
+    self.scrollViewButtonViewRight.hidden = selected;
 }
 
 #pragma mark Height methods
